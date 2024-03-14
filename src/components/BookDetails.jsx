@@ -17,6 +17,7 @@ const BookDetails = () => {
            <p className="text-yellow-200 m-2 text-center">{book.volumeInfo.authors.join(', ')}</p>
          )}
      <p className="text-gray-700 mt-5   overflow-scroll h-60 ">{book.volumeInfo.description}</p>
+     <button onClick={()=>addBookToRead(book)} key={book.id} className=" bg-orange-300 border border-orange-300 rounded-lg p-4 m-4">Add to Readlist</button>
    </div>
 ))}
 

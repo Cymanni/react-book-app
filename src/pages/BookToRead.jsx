@@ -1,7 +1,7 @@
 import { useBookContext } from "../BooksContext"
 
 const BookToRead = () => {
-    const {selectedBook} = useBookContext()
+    const {selectedBook, removeBookFromRead} = useBookContext()
 if(!selectedBook || selectedBook.length === 0){
     return(
         <div className="mt-8">
@@ -12,8 +12,8 @@ if(!selectedBook || selectedBook.length === 0){
 }
 
   return (
-   <div className="mt-8">
-    <h1>selected books</h1>
+   <div className="">
+    <h1 className="">selected books</h1>
     {selectedBook.map((book)=>(
      <div key={book.id} className="border border-orange-300 rounded-lg p-4">
      <h2 className="text-xl font-semibold mb-2">{book.volumeInfo.title}</h2>
@@ -24,6 +24,8 @@ if(!selectedBook || selectedBook.length === 0){
        <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} className="" />
      )}
      <p className="text-green-700 mt-2">{book.volumeInfo.description}</p>
+     <button className="text-orange-800 bg-green-700 border border-orange-300 rounded-lg p-4 m-4" onClick={() => removeBookFromRead(book.id)}>Remove</button>
+
    </div>
 ))}
    </div>

@@ -25,11 +25,21 @@ export const BooksProvider = ({children})=>{
         }
     }
 
-const addBookToRead = (book)=>{
-    setSelectedBook([...selectedBook, book]);
-}
+    const addBookToRead = (book)=>{
+        // Überprüfen, ob das Buch bereits in der Liste ausgewählter Bücher vorhanden ist
+        if (!selectedBook.find(selected => selected.id === book.id)) {
+            setSelectedBook([...selectedBook, book]);
+        } else {
+            window.alert("Das Buch wurde bereits zur Liste hinzugefügt.");
+        }
+    }
+    const removeBookFromRead = (bookId) => {
+        setSelectedBook(selectedBook.filter(book => book.id !== bookId));
+    }
+    
+    
     return(
-        <BooksContext.Provider value={{books, fetchBooks, selectedBook, addBookToRead}}>
+        <BooksContext.Provider value={{books, fetchBooks, selectedBook, addBookToRead, removeBookFromRead}}>
             {children}
         </BooksContext.Provider>
     )   
