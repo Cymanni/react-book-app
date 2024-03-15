@@ -12,8 +12,8 @@ if(!selectedBook || selectedBook.length === 0){
 }
 
   return (
-   <div className="">
-    <h1 className="">selected books</h1>
+   <div>
+    <h1>selected books</h1>
     {selectedBook.map((book)=>(
      <div key={book.id} className="border border-orange-300 rounded-lg p-4">
      <h2 className="text-xl font-semibold mb-2">{book.volumeInfo.title}</h2>

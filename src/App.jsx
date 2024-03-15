@@ -1,8 +1,7 @@
-import { useState } from 'react'
+
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import { BooksProvider } from './BooksContext'
-import './App.css'
 import BookDetails from './components/BookDetails'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import BookToRead from './pages/BookToRead'

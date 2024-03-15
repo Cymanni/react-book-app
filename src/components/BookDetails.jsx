@@ -4,9 +4,9 @@ const BookDetails = () => {
     const {books,addBookToRead} = useBookContext();
 
   return (
-   <div className="mt-8">
+   <div className="mt-8 rounded-xl bg-green-700">
 {books.length>0&&(
-       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9 m-24 bg-green-700">
+       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-14 gap-5 m-2 bg-green-700 rounded-sm">
       {books.map(book=>(
      <div onClick={()=>addBookToRead(book)} key={book.id} className="border border-orange-300 rounded-lg p-4 ">
      {book.volumeInfo.imageLinks && (
