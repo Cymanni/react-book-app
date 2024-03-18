@@ -8,7 +8,7 @@ const BookDetails = () => {
 {books.length>0&&(
        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-14 gap-5 m-2 bg-green-700 rounded-sm">
       {books.map(book=>(
-     <div onClick={()=>addBookToRead(book)} key={book.id} className="border border-orange-300 rounded-lg p-4 ">
+     <div key={book.id} className="border border-orange-300 rounded-lg p-4 ">
      {book.volumeInfo.imageLinks && (
          <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} className="w-full h-96  " />
          )}
